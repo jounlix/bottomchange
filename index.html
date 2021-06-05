@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    #cube {
+      width: 100px;
+      height: 100px;
+      margin: 100px;
+      display: inline-block;
+    }
+
+    .color1 {
+        background-color: red;
+    }
+
+    .color2 {
+      background-color: green;
+    }
+
+    .color3 {
+      background-color: black;
+    }
+
+    .color4 {
+      background-color: yellow;
+    }
+
+    .color5 {
+      background-color: fuchsia;
+    }
+
+    </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="cube"></div>
+
+    <script>
+        (function changeColor (currentNumber) {
+            currentNumber++;
+
+            if (currentNumber >5) {
+                currentNumber = 1;
+            }
+
+            document.getElementById('cube').setAttribute('class', 'color' + currentNumber);
+
+            setTimeout (function() {
+                changeColor (currentNumber)
+            }, 5000);
+        }) (0);
+    </script>
+
+</body>
+</html>
